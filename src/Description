@@ -14,3 +14,39 @@ tile_name go_north go_east go_south go_west
 Using this information, create a GUI that can navigate
 the world of Hyrule using 4 buttons to move North,
 South, East, and West.
+
+Game
++ main()
+
+Screen
+- row: int
+- col: int
+- image: Buffered Image
+- Height
+- Width
+- North
+- South
+- East
+- West
++ Screen(___)
++ getWidth(): int
++ getHeight(): int
++ canGoNorth(): b
++ canGoSouth(): b
++ canGoEast(): b
++ canGoWest(): b
++ getRow(): int
++ getCol(): int
++ getImage(): buffered image
+
+Map
+- screens: Screen[]
+- height: int
+- width: int
+- name: String
++ get Screen(row, col): Screen
+
+GUI
+
+
+Controller
