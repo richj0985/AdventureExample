@@ -1,11 +1,12 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
 /**
  *
- * @author richj0985
+ * @author lamon
  */
 public class Controller {
     private GUI gui;
@@ -13,7 +14,7 @@ public class Controller {
     private int row;
     private int col;
     
-    public Controller(GUI gui, Map map, int r, int c){
+    public Controller(GUI gui, Map map, int row, int col){
         this.gui = gui;
         this.map = map;
         this.row = row;
@@ -22,7 +23,7 @@ public class Controller {
         // make sure the GUI can talk to you
         gui.setController(this);
         
-        // set the starting Image
+        // set the starting image
         Screen start = map.getScreen(row, col);
         gui.setImage(start.getImage());
     }
@@ -34,12 +35,11 @@ public class Controller {
         if(current.canGoNorth()){
             // move up a row
             row--;
-            
             // get the new screen
             Screen newScreen = map.getScreen(row, col);
-            
             // set the image
             gui.setImage(newScreen.getImage());
         }
     }
+    
 }

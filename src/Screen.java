@@ -5,17 +5,16 @@ import java.util.Scanner;
 import javax.imageio.ImageIO;
 
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
 /**
  * An object to represent a single screen in a level
- * @author richj0985
+ * @author lamon
  */
 public class Screen {
-    
-    // instance variables
     private int row;
     private int col;
     private BufferedImage image;
@@ -23,28 +22,26 @@ public class Screen {
     private boolean east;
     private boolean south;
     private boolean west;
-        
+    
     /**
      * Using a scanner to create a new screen
-     * @param input scanner containing screen info
+     * @param input A scanner containing screen info
      */
     public Screen(Scanner input){
         // scan in the image name
         String imageName = input.next();
-        
-        // Split the string to grab row and col
+        // split the string to grab row and col
         String[] split = imageName.split("_");
-        
-        // save the row - gets rid of R convert to int
+        // save the row - gets rid of R, convert to int
         row = Integer.parseInt(split[1].substring(1));
-        
-        // save the column - gets rid of C, convert to int
+        // save the column - gets rid of C, convert to in
         col = Integer.parseInt(split[2].substring(1));
         
         // load the image file
         try{
-            image = ImageIO.read(new File("zelda/" + imageName + ".gif"));
-        } catch (Exception e){
+            image = ImageIO.read(new File("zelda/" 
+                             + imageName + ".gif"));
+        }catch(Exception e){
             e.printStackTrace();
         }
         
@@ -54,9 +51,10 @@ public class Screen {
         south = input.nextBoolean();
         west = input.nextBoolean();
         
-        // move to next line
+        //move to next line
         input.nextLine();
     }
+    
     /**
      * Gets the row of the screen
      * @return the row of the screen
@@ -67,7 +65,7 @@ public class Screen {
     
     /**
      * Gets the column of the screen
-     * @return the col of the screen
+     * @return the column of the screen
      */
     public int getCol(){
         return col;
@@ -92,6 +90,7 @@ public class Screen {
     public BufferedImage getImage(){
         return image;
     }
+    
     
     /**
      * For testing purposes
